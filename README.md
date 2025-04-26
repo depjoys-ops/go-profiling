@@ -17,7 +17,7 @@ benchstat CalcRecursive.txt CalcDynamic.txt
 ```
 ![screenshot](./imageFolder/screenshot2.png)
 
-## Profiling
+## Profiling to file
 
 ### Dump from benchmarks cpu.prof and mem.prof for analyze
 > go test -v ./... -bench="BenchmarkCalculate" -cpuprofile='cpu.prof' -memprofile='mem.prof'
@@ -30,3 +30,21 @@ benchstat CalcRecursive.txt CalcDynamic.txt
 > go tool pprof mem.prof
 
 ![screenshot](./imageFolder/screenshot4.png)
+
+### Dump cpu.prof and mem.prof for analyze from file
+> go run cmd/fileprofile/*
+
+### To analyze from the web interface, use
+> go tool pprof -http=:4000 cpu.prof
+
+![screenshot](./imageFolder/screenshot5.png)
+
+### You can compare two profiles
+> go tool pprof -http=:4000 -diff_base cpu.prof cpu_1.prof
+
+### Things to watch
+```
+runtime.mallogc - see what data can avoid allocate <br/>
+runtime.growslice - maybe you need to set up a capacity for slices <br/>
+syscall.Read or syscall.Read - maybe you need to use buffering <br/> 
+```
