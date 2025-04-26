@@ -4,7 +4,6 @@ const (
 	maxSliceSize = 50000
 )
 
-//Recursive
 func Recursive(n int) int {
 	if n == 0 {
 		return 1
@@ -12,7 +11,6 @@ func Recursive(n int) int {
 	return n * Recursive(n-1)
 }
 
-//Dynamic
 func Dynamic(n int) int {
 	memo := make([]int, n+1)
 	memo[0] = 1
@@ -21,4 +19,13 @@ func Dynamic(n int) int {
 	}
 	return memo[n]
 }
+
+func Calculate() []int{
+	var slice []int
+	for i := 0; i < maxSliceSize; i++ {
+		slice = append(slice, Dynamic(i))
+	}
+	return slice
+}
+
 

@@ -1,0 +1,17 @@
+goos: linux
+goarch: amd64
+pkg: profiling/factorial
+cpu: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+BenchmarkCalculate
+BenchmarkCalculate-2   	       1	8188238671 ns/op
+BenchmarkCalculate-2   	       1	8143363166 ns/op
+BenchmarkCalculate-2   	       1	8187019274 ns/op
+BenchmarkCalculate-2   	       1	8196800577 ns/op
+BenchmarkCalculate-2   	       1	8212589093 ns/op
+BenchmarkCalculate-2   	       1	8220775356 ns/op
+BenchmarkCalculate-2   	       1	8218682347 ns/op
+BenchmarkCalculate-2   	       1	8225676188 ns/op
+BenchmarkCalculate-2   	       1	8665829198 ns/op
+BenchmarkCalculate-2   	       1	8423593727 ns/op
+PASS
+ok  	profiling/factorial	82.719s
