@@ -8,8 +8,8 @@
 ![screenshot](./imageFolder/screenshot1.png)
 
 ```
-go test -v ./... -bench="BenchmarkCalculateRecursive" -run=^# -count=10 | tee CalcRecursive.txt
-go test -v ./... -bench="BenchmarkCalculateDynamic" -run=^# -count=10 | tee CalcDynamic.txt
+go test -v ./... -bench="BenchmarkCalculate" -run=^# -count=10 | tee CalcRecursive.txt
+go test -v ./... -bench="BenchmarkCalculate" -run=^# -count=10 | tee CalcDynamic.txt
 go install golang.org/x/perf/cmd/benchstat@latest
 benchstat CalcRecursive.txt CalcDynamic.txt
 ```
